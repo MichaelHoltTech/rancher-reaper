@@ -121,10 +121,6 @@ class RancherAwsHostReaper
     if availability_zone
       region = availability_zone[0..-2]
       @logger.info("Region: #{region}")
-      if !valid_region?(region)
-        region = nil
-        @logger.warn("Host #{host["hostname"]} is labelled with an invalid availability zone: #{availability_zone}")
-      end
     end
     region
   end
